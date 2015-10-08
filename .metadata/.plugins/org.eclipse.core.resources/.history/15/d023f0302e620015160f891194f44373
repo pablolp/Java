@@ -1,0 +1,40 @@
+package ejercicio4;
+
+import java.util.Scanner;
+
+public class Boleto {
+	private int numeros[]=new int [8];
+	private static Scanner teclado = new Scanner(System.in);
+	
+	public Boleto() {
+		boolean incorrecto;
+		System.out.println("Escribe 8 numeros del 1 al 100 no repetidos");
+		for (int i = 0; i < numeros.length; i++) {
+			do{
+				incorrecto = false;
+				System.out.println((i+1)+"->");
+				numeros[i]= teclado.nextInt();
+				if(numeros[i]<=100 && numeros[i]>=1){
+					for (int j = 0; j < numeros.length; j++) {
+						if(numeros[i] == numeros[j]){
+							incorrecto = true;
+							break;
+						}
+						
+						
+					}
+				}else 
+					incorrecto = true;
+					
+			}while(incorrecto);
+		}
+	}
+	public void comprobarBoleto(Boleto ganador){
+		for (int i = 0; i < numeros.length; i++) {
+			for (int j = 0; j < numeros.length; j++) {
+				
+			}
+		}
+		System.out.print("Los nuemros ganadores son:");
+	}
+}

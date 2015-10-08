@@ -1,0 +1,24 @@
+package figuras;
+
+public class Circulo extends Forma {
+	private int radio;
+	public Circulo(int x, int y, int puntos,int radio) {
+		super(x, y, puntos);
+		this.radio = radio;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Circulo [radio=" + radio + ", getArea()=" + getArea() + ", getX()=" + getX() + ", getY()=" + getY()
+				+ "]";
+	}
+
+
+	@Override
+	protected double calcularArea() {
+		double ret = 3.1415*(double)Math.pow(radio, 2);
+		return ret;
+	}
+
+}
