@@ -1,0 +1,85 @@
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Calculadora implements ActionListener{
+	JFrame ventana;
+	
+	public Calculadora() {
+		ventana = new JFrame ("Calcu");
+		ventana.setSize(300, 300);
+		ventana.add(crearPanelPrincipal());
+		ventana.setVisible(true);
+		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private Component crearPanelPrincipal() {
+		JPanel panel = new JPanel(new BorderLayout());
+		panel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+		panel.add(crearTextField(),BorderLayout.NORTH);
+		panel.add(crearPanelOeste(),BorderLayout.WEST);
+		panel.add(crearPanelEste(),BorderLayout.EAST);
+		
+		return panel;
+	}
+
+	private Component crearTextField() {
+		JTextField tField = new JTextField("123");
+		tField.setSize(tField.getWidth(), 70);
+		return tField;
+	}
+
+	private Component crearPanelOeste() {
+		JPanel panel = new JPanel(new GridLayout(4,3,0,0));
+		
+		for (int i = 1; i <= 9; i++) {
+			panel.add(crearBoton(i));				
+		}
+		panel.add(new JPanel());
+		panel.add(crearBoton(0));
+		return panel;
+	}
+
+	private JButton crearBoton(int i) {
+		JButton boton;
+		boton = new JButton(String.valueOf(i));
+		boton.addActionListener(this);
+
+		return boton;
+	}
+	private JButton crearBoton(String i) {
+		JButton boton;
+		boton = new JButton(i);
+		boton.addActionListener(this);
+
+		return boton;
+	}
+	private Component crearPanelEste() {
+		JPanel panel = new JPanel(new GridLayout(5, 1,0,0));
+		panel.add(crearBoton("-"));
+		panel.add(crearBoton("+"));
+		panel.add(crearBoton("*"));
+		panel.add(crearBoton("/"));
+		panel.add(crearBoton("="));
+		return panel;
+	}
+
+	public static void main(String[] args) {
+		Calculadora p =new Calculadora();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

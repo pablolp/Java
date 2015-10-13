@@ -8,7 +8,9 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Jugador j1,j2;
+		Jugador j1=null,j2=null;
+		j1=j2;
+		j2=j1;
 		
 	}
 	public class ReglasGaldakao implements Validador{
@@ -16,11 +18,11 @@ public class Principal {
 		@Override
 		public boolean valido(Integer num) {
 			String a = num.toString();
-			String aux;
+			//String aux;
 			if(a.startsWith("0")){
 				return false;
 			}
-			aux = a.substring(0, 1);
+			//aux = a.substring(0, 1);
 			if(a.length()!=4)
 				return false;
 			return false;

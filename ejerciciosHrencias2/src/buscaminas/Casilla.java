@@ -1,11 +1,8 @@
 package buscaminas;
 
 public class Casilla {
-	private int x,y;
 	private boolean visto,mina;
 	public Casilla(int posX,int posY) {
-		x=posX;
-		y=posY;
 		visto = false;
 		mina = false;
 	}

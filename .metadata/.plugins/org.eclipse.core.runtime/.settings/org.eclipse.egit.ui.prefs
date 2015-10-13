@@ -1,2 +1,4 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Visual</message>\r\n<message>Actualizar&\#x0A;</message>\r\n<message>Visual&\#x0A;</message>\r\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>ACtualizar</message>\r\n<message>3</message>\r\n<message>Visual</message>\r\n<message>Actualizar&\#x0A;</message>\r\n<message>Visual&\#x0A;</message>\r\n</messages>
 eclipse.preferences.version=1
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300

@@ -1,0 +1,33 @@
+package muertosYHeridos;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	Scanner telado = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Jugador j1=null,j2=null;
+		j1=j2;
+		j2=j1;
+		
+	}
+	public class ReglasGaldakao implements Validador{
+
+		@Override
+		public boolean valido(Integer num) {
+			String a = num.toString();
+			String aux;
+			if(a.startsWith("0")){
+				return false;
+			}
+			aux = a.substring(0, 1);
+			if(a.length()!=4)
+				return false;
+			return false;
+		}
+		
+	}
+
+}

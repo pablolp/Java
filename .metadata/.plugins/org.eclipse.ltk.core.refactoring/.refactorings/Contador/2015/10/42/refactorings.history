@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;Contador.panelCentral()&apos; to &apos;panelPrincipal&apos;&#x0D;&#x0A;- Original project: &apos;Contador&apos;&#x0D;&#x0A;- Original element: &apos;Contador.panelCentral()&apos;&#x0D;&#x0A;- Renamed element: &apos;Contador.panelPrincipal()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;panelCentral&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{Contador.java[Contador~panelCentral" name="panelPrincipal" references="true" stamp="1444826815092" version="1.0"/>
+</session>

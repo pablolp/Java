@@ -32,7 +32,8 @@ public class PantallaPrincipal implements ActionListener {
 		JButton boton = new JButton();
 		lValor.setText(String.valueOf(contador));
 		lValor.setFont(new Font("Arial", Font.BOLD, 45));
-		lValor.setForeground(Color.RED);lValor.setHorizontalAlignment(JLabel.CENTER);
+		lValor.setForeground(Color.RED);
+		lValor.setHorizontalAlignment(JLabel.CENTER);
 		boton.setText("Clickame");
 		boton.addActionListener(this);
 		panel.add(lValor,BorderLayout.CENTER);
@@ -40,7 +41,8 @@ public class PantallaPrincipal implements ActionListener {
 		return panel;
 	}
 	public static void main(String[] args) {
-		PantallaPrincipal programa = new PantallaPrincipal();
+		//PantallaPrincipal programa = new PantallaPrincipal();
+		/*/*/
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {

@@ -1,0 +1,27 @@
+package peloRebota;
+
+
+
+import java.util.Observable;
+import java.util.Observer;
+
+import javax.swing.JFrame;
+
+
+public class Pantalla extends JFrame implements Observer{
+	
+	Arraylist<>
+	
+	@Override
+	public void paint(java.awt.Graphics arg0) {
+		
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+}

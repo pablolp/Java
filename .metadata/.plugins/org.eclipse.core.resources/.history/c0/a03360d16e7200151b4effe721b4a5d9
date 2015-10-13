@@ -1,0 +1,158 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+//import javax.swing.border.Border;
+
+public class Calculadora implements ActionListener {
+	JFrame ventana;
+	JLabel label;
+	String sval[]= new String[1];
+	String sval2[]= new String [1];
+	String print = "";
+	String operacion;
+
+	public Calculadora() {
+		sval[0] = new String("");
+		sval2[0] = new String("");
+		print = sval[0];
+		ventana = new JFrame("Calcu");
+		ventana.setSize(300, 300);
+		ventana.setLocation(500, 100);
+		ventana.setContentPane(crearPanelPrincipal());
+		ventana.setVisible(true);
+		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	}
+
+	private JPanel crearPanelPrincipal() {
+		JPanel panel = new JPanel(new BorderLayout());
+		panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+		panel.add(crearTextField(), BorderLayout.NORTH);
+		panel.add(crearPanelOeste(), BorderLayout.CENTER);
+		panel.add(crearPanelEste(), BorderLayout.EAST);
+
+		return panel;
+	}
+
+	private Component crearTextField() {
+		label = new JLabel("123");
+		label.setFont(new Font("Console", Font.BOLD, 25));
+		label.setHorizontalAlignment(JLabel.RIGHT);
+		label.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
+		label.setPreferredSize(new Dimension(300, 40));
+		return label;
+	}
+
+	private Component crearPanelOeste() {
+		JPanel panel = new JPanel(new GridLayout(4, 3, 5, 5));
+
+		for (int i = 1; i <= 9; i++) {
+			panel.add(crearBoton(i));
+		}
+		panel.add(new JLabel());
+		panel.add(crearBoton(0));
+
+		return panel;
+	}
+
+	private JButton crearBoton(int i) {
+		JButton boton;
+		boton = new JButton(String.valueOf(i));
+		boton.addActionListener(this);
+
+		return boton;
+	}
+
+	private JButton crearBoton(String i) {
+		JButton boton;
+		boton = new JButton(i);
+		boton.addActionListener(this);
+
+		return boton;
+	}
+
+	private Component crearPanelEste() {
+		JPanel panel = new JPanel(new GridLayout(5, 1, 0, 0));
+		panel.add(crearBoton("-"));
+		panel.add(crearBoton("+"));
+		panel.add(crearBoton("*"));
+		panel.add(crearBoton("/"));
+		panel.add(crearBoton("="));
+		return panel;
+	}
+
+	public static void main(String[] args) {
+		Calculadora p = new Calculadora();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		Double val, val2;
+
+		try {
+			print = print + e.getActionCommand();
+			val = Double.parseDouble(print);
+			label.setText(String.valueOf(new DecimalFormat("#.#").format(val)));
+		} catch (NumberFormatException err) {
+			switch (e.getActionCommand()) {
+			case "-":
+				print = sval[0];
+				print = sval2[0];
+				operacion = "-";
+				break;
+			case "+":
+
+				break;
+			case "*":
+
+				break;
+			case "/":
+
+				break;
+			case "=":
+				switch (operacion) {
+				case "-":
+					val = Double.parseDouble(sval[0]);
+					val2 = Double.parseDouble(sval2[0]);
+					val = val - val2;
+					break;
+				case "+":
+
+					break;
+				case "*":
+
+					break;
+				case "/":
+
+					break;
+				case "=":
+
+					break;
+
+				default:
+					break;
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		// System.out.println(e.getSource());
+
+	}
+}

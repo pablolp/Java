@@ -1,0 +1,12 @@
+package peloRebota;
+
+import java.util.Observable;
+
+import javax.swing.JFrame;
+
+
+public class Pantalla extends JFrame{
+	
+	
+	
+}
